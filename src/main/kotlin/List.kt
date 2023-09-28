@@ -1,14 +1,17 @@
 fun main() {
 
     // mutable list
-    val userList = mutableListOf<User>()
-    userList.add(User("a", 1))
-    userList.add(User("b", 2))
-    userList.add(User("c", 3))
+    val userList = mutableListOf<UserClass>()
+    userList.add(UserClass("a", 1))
+    userList.add(UserClass("b", 2))
+    userList.add(UserClass("c", 3))
 
     // immutable list
-    val list = listOf<User>(
-        User("a", 1)
+    val list = listOf<UserClass>(
+        UserClass("a", 1)
+    )
+    val list2 = listOf(
+        UserClass("a", 1)
     )
 
     for (ele in userList) {
@@ -22,9 +25,3 @@ fun main() {
 
     for ((index, ele) in userList.withIndex()) { println("index: $index, user: $ele") }
 }
-
-
-class User(
-    var name: String,
-    var age: Int
-)
